@@ -79,6 +79,15 @@ var cssTasks = function(filename) {
           errLogToConsole: !enabled.failStyleTask
         }));
       })
+      .pipe(function() {
+        return $.if('*.sass', $.sass({
+          outputStyle: 'nested', // libsass doesn't support expanded yet
+          precision: 10,
+          includePaths: ['.'],
+          errLogToConsole: !enabled.failStyleTask,
+          indentedSyntax: true
+        }));
+      })
       .pipe($.concat, filename)
       .pipe($.pleeease, {
         autoprefixer: {

@@ -8,14 +8,10 @@
     },
     "main.css": {
       "files": [
-        "styles/main.less"
+        "styles/main.scss",
+        "styles/editor-style.sass"
       ],
       "main": true
-    },
-    "editor-style.css": {
-      "files": [
-        "styles/editor-style.less"
-      ]
     },
     "jquery.js": {
       "bower": ["jquery"]
